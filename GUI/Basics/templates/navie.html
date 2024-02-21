@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background-color: #0f0f19; /* Dark blue background */
+            color: #ffffff; /* White text */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            background-color: rgba(83, 172, 197, 0.8); /* Semi-transparent blue */
+            padding: 20px;
+            margin: auto;
+            width: 60%;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        }
+        h1, h2, h3 {
+            text-align: center;
+        }
+        table {
+            margin: auto;
+            width: 80%;
+        }
+        input[type="text"], input[type="submit"] {
+            padding: 8px;
+            margin-bottom: 10px;
+            width: 90%;
+            border-radius: 5px;
+        }
+        input[type="submit"] {
+            background-color: #f26d21; /* Orange button */
+            color: white;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #f59769; /* Lighter orange on hover */
+        }
+    </style>
+    <title>NAIVE BAYES ALGORITHM</title>
+</head>
+<body>
+    <div style="background-color: rgb(83, 172, 197);">
+        <div style="text-align: center;">
+            <h1>NAIVE BAYES ALGORITHM/h1>
+            <h2>predicts to which class of stellar an existing star belongs to.</h2>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <table>
+                <tr>
+                    <td>Enter the alpha = Right Ascension angle:</td>
+                    <td><input type="text" name="q"></td>
+                </tr>
+                <tr>
+                    <td>Enter the delta = Declination angle :</td>
+                    <td><input type="text" name="w"></td>
+                </tr>
+                <tr>
+                    <td>Enter the Ultraviolet filter in the photometric system:</td>
+                    <td><input type="text" name="e"></td>
+                </tr>
+                <tr>
+                    <td>Enter the Green filter in the photometric system :</td>
+                    <td><input type="text" name="r"></td>
+                </tr>
+                <tr>
+                    <td>Enter the  Red filter in the photometric system:</td>
+                    <td><input type="text" name="t"></td>
+                </tr>
+                <tr>
+                    <td>Enter the  Near Infrared filter in the photometric system:</td>
+                    <td><input type="text" name="m"></td>
+                </tr>
+                <tr>
+                    <td>Enter the Infrared filter in the photometric system</td>
+                    <td><input type="text" name="u"></td>
+                </tr>
+                <tr>
+                    <td>Enter the run_ID :</td>
+                    <td><input type="text" name="i"></td>
+                </tr>
+                <tr>
+                    <td>Enter the rerun_ID:</td>
+                    <td><input type="text" name="o"></td>
+                </tr>
+
+                <tr>
+                    <td>Enter the cam_col:</td>
+                    <td><input type="text" name="p"></td>
+                </tr>
+                <tr>
+                    <td>Enter the field_ID:</td>
+                    <td><input type="text" name="a"></td>
+                </tr>
+                <tr>
+                    <td>Enter the spec_obj_ID:</td>
+                    <td><input type="text" name="s"></td>
+                </tr>
+                <tr>
+                    <td>Enter the redshift:</td>
+                    <td><input type="text" name="d"></td>
+                </tr>
+                <tr>
+                    <td>Enter the plate:</td>
+                    <td><input type="text" name="f"></td>
+                </tr>
+                <tr>
+                    <td>Enter the MJD:</td>
+                    <td><input type="text" name="g"></td>
+                </tr>
+                <tr>
+                    <td>Enter the Fiber ID:</td>
+                    <td><input type="text" name="h"></td>
+                </tr>
+                <tr>
+                    <td><h3>The Gastral object is: </h3></td>
+                    <td> <h3>{{ result }}</h3></td>
+                </tr>
+                <tr>
+                    <td><h3> Accuracy of the Prediction is:</h3></td>
+                    <td><h3>{{ acc }}</h3></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Predict"></td>       
+            </table>
+        </form>
+        </div>
+</body>
+</html>
